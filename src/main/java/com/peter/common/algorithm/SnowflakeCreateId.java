@@ -1,6 +1,4 @@
-package com.peter.common.algorithm;/**
- * Created by DELL on 2019/7/29.
- */
+package com.peter.common.algorithm;
 
 /**
  * @ClassName SnowflakeCreateId

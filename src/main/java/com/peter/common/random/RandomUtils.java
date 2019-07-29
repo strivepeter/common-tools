@@ -1,6 +1,5 @@
-package com.peter.common.random;/**
- * Created by DELL on 2019/6/18.
- */
+package com.peter.common.random;
+
 
 import java.util.Random;
 
@@ -30,5 +29,15 @@ public class RandomUtils {
         //将字符串转换为数字并输出
         int num = Integer.parseInt(str.toString());
         return num;
+    }
+
+
+    /**
+     * ---------------测试---------------
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+
     }
 }

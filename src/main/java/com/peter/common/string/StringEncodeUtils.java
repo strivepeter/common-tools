@@ -1,6 +1,5 @@
-package com.peter.common.string;/**
- * Created by DELL on 2019/6/20.
- */
+package com.peter.common.string;
+
 
 import java.io.UnsupportedEncodingException;
 
@@ -47,5 +46,14 @@ public class StringEncodeUtils {
             e.printStackTrace();
         }
         return str;
+    }
+
+    /**
+     * ---------------测试---------------
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+
     }
 }

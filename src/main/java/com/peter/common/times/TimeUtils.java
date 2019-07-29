@@ -1,6 +1,4 @@
-package com.peter.common.times;/**
- * Created by DELL on 2019/4/18.
- */
+package com.peter.common.times;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -481,4 +479,13 @@ public class TimeUtils {
         return false;
     }
 
+
+    /**
+     * ---------------测试---------------
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+
+    }
 }

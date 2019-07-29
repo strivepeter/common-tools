@@ -1,6 +1,4 @@
-package com.peter.common.string;/**
- * Created by DELL on 2019/7/29.
- */
+package com.peter.common.string;
 
 /**
  * @ClassName StringUtils
@@ -66,4 +64,13 @@ public class StringUtils {
         }
     }
 
+
+    /**
+     * ---------------测试---------------
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+
+    }
 }
