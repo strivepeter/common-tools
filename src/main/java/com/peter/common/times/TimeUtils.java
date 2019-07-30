@@ -425,7 +425,6 @@ public class TimeUtils {
         cal.add(Calendar.MONTH, 1);
         cal.add(Calendar.DATE, -1);
         date = cal.getTime();
-        ;
         SimpleDateFormat sf = new SimpleDateFormat(format);
         return sf.format(date);
     }
