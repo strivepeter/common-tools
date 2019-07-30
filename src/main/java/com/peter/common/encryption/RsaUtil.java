@@ -245,21 +245,20 @@ public class RsaUtil {
 
 
             // RSA签名
-            data = "8e14e3f95158|1562204202|ebscn";
             String sign = sign(data, getPrivateKey(privateKey));
-            System.out.println(String.format("签名: %s", sign));
-//            // RSA验签
-//            boolean result = verify(data, getPublicKey(publicKey),sign);
-//            System.out.print("验签结果:" + result);
+            System.out.println(String.format("签名: %s", sign.length()));
+            // RSA验签
+            boolean result = verify(data, getPublicKey(publicKey),sign);
+            System.out.print("验签结果:" + result);
 
 
 //            String sign = "RiZC2ctNUgN4NhxIar2GyJqU1Qe6tfjXl+60ajIA6kG3cFkUkjJbGxmQqjlOq1ovFtACIcJJ8BrV5y2aJS7ohHKVKRBdQqJohswkHuZbHHAfLcwDH8FuM1Cu1EBL7tBCZfQcPOma0DQE7WgjE1hfI/F0rzSMdcaysEBt2Zrtvdc=";
 //            String publicKey = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjFen6L4vhjUCL4saNk8ZaVUS/S4Sa3YSs932jyJ4bGcSQhPLzMLwqGbf/nvRPhJgpSN3FhssYOTSSAvvxAv3jJ7DDMVsaiu0+X6/hxeK2HBNA5OUTxFzViG/ghUfeU5KFHHFGoFr4FsZK6RC10J8vyjXqLQ2NVpn4L/gROme+TulETT0UP/NrQ8gCOpbFX/Di/rEIXBRX4oEGtUNwBfktCKu3HQpoQcbpnC0o9Eg8s51Ca0VLHSg3bWAZG3dqjNRDqS0+ItVwSVP9EgVYHNL5tMPAP+laP3oIqNVohK8WzAofVF2FtQvNfcfWa0ljNcBdb1CYyHw8xaCWy7vmBxc8QIDAQAB";
 //            String privateKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKX5K8qGPO0uwrl3/G6f8nxRYUU76UNSNAvGu6yWo2GJ673SXJE1q0n7bresb9SBfjJTEf4RkAh1zSXXzLKWrAzWr/dn8GIiUMDUnkld1FJ4FpPkFKg3sk6pynKbh44iJFrpytybaZ7Ws3OVYVI2R2zoYix0q1fIdU8FsDNQjoklAgMBAAECgYB5IU76cdoJaDUpUw5iVk2MuX/6HW1yeo4Ngi76GL6IszXfxaVVPQwT5HK7jhfXyeImLEZXXM33vrHISqTUOe66BzNYLTy/DekS4M3NsPBe3R5QLHLKwbL0ZmRC8bqFH/VcQq8wAAF7oRLfyalHlOClh2PYz8n3DvTgPUEgJnNkgQJBAPIna+fAZuU+LSjvG8IQtDENylfCLkC1pMa3IwPDEysdD7bbQAolfFM0KIAlyQtp6CQcIFLe4NcZKlSoQ+w8I3ECQQCvdqO2HLYrSqSo0pCZtWHaVW+VMOv8wh6n81RFUt452Agn7IZnD45OSDawFwmJMV2Lf/gCZeOJLDDtGQiU/371AkEAq8m1rlJ7bLQgW4LNwW4SNx6eZoW2RGfYfrTbXUbd6V8Tj9iY5NnVCj3dYZPsvXEjo8JkWAYPoekTc71vej7rsQJAVxymsK5Wfu3DDBHmOnnDyBrsl/w+3TEe+TEkYHqA2+T2P6P9IkOl2hWeGRSG5nb8w1pYLhCZw6uN6tin2xlx1QJAOI6EuzmD2SF7G7FxlgssS+DopCnrqHgW69L1E8dnpwYL0WWnVuu90MSMz/DQ4wVGCBtMpYojFzYQWRsbJu90JA==";
-
-            System.out.println(sign.length());
-            boolean result = checkSign((RSAPublicKey) getPublicKey(publicKey), data.getBytes("UTF-8"), HexUtils.hexStringToByte(sign));
-            System.out.print("验签结果:" + result);
+//
+//            System.out.println(sign.length());
+//            boolean result = checkSign((RSAPublicKey) getPublicKey(publicKey), data.getBytes("UTF-8"), HexUtils.hexStringToByte(sign));
+//            System.out.print("验签结果:" + result);
 
         } catch (Exception e) {
             e.printStackTrace();
