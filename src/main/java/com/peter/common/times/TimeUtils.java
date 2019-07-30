@@ -481,11 +481,28 @@ public class TimeUtils {
 
 
     /**
+     * 获取当前日期的后几日
+     *
+     * @return Date
+     */
+    public static String getSpecifiedDayAfter(Date date, int number) {
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        int day = c.get(Calendar.DATE);
+        c.set(Calendar.DATE, day + number);
+        date = c.getTime();
+        return datetime.format(date);
+    }
+
+    /**
      * ---------------测试---------------
      *
      * @param args
      */
     public static void main(String[] args) {
+
+        System.out.println(getCurrentTimeBySecond());
+        System.out.println(getSpecifiedDayAfter(new Date(),2));
 
     }
 }
