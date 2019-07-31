@@ -19,8 +19,9 @@ public class Base64Util {
 
     /**
      * 加密字符串
-     * @param inputData
-     * @return
+     *
+     * @param inputData  加密的内容
+     * @return 返回加密的字符串
      */
     public static String decodeData(String inputData) {
         try {
@@ -36,8 +37,9 @@ public class Base64Util {
 
     /**
      * 解密加密后的字符串
-     * @param inputData
-     * @return
+     *
+     * @param inputData 解密的内容
+     * @return 解密后的内容
      */
     public static String encodeData(String inputData) {
         try {
