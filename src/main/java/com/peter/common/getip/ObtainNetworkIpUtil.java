@@ -23,16 +23,16 @@ public class ObtainNetworkIpUtil {
 
     /**
      * 获取请求主机IP地址,如果通过代理进来，则透过防火墙获取真实IP地址;
-     * //request.getHeader("X-Forwarded-For");
+     * request.getHeader("X-Forwarded-For");
      *
-     * @param request
-     * @return
-     * @throws IOException
+     * @param request 请求的request
+     * @return 返回Ip的地址
+     * @throws IOException 抛出的异常
      */
     public final static String getIpAddress(HttpServletRequest request) throws IOException {
         String ip;
-        logger.info("最开始getIpAddress(HttpServletRequest) - Remote - String ip=" + request.getRemoteAddr());
-        logger.info("最开始getIpAddress(HttpServletRequest) - X-Forwarded-For - String ip=" + request.getHeader("X-Forwarded-For"));
+        logger.info(String.format("最开始getIpAddress(HttpServletRequest) - Remote - String ip= %s", request.getRemoteAddr()));
+        logger.info(String.format("最开始getIpAddress(HttpServletRequest) - X-Forwarded-For - String ip= %s", request.getHeader("X-Forwarded-For")));
         if (request.getHeader(X_FORWARDED_FOR) == null) {
             ip = request.getRemoteAddr();
             logger.info("getIpAddress(HttpServletRequest) - Remote - String ip=" + ip);
