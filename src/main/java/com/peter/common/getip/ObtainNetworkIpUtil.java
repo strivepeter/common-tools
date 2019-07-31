@@ -1,7 +1,6 @@
 package com.peter.common.getip;
 
 
-import com.peter.common.excel.ExportExcelUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,34 +8,31 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 /**
- * @ClassName IpNetworkUtil
+ * @ClassName ObtainNetworkIpUtil
  * @Description 获取请求者的IP的地址
  * @Author peter
  * @Date 2019/6/18 10:58
  * @Version 1.0
  */
-public class IpNetworkUtil {
+public class ObtainNetworkIpUtil {
     private static final String UNKNOWN = "unknown";
     private static final String X_FORWARDED_FOR = "X-Forwarded-For";
 
-    private static Logger logger = LoggerFactory.getLogger(IpNetworkUtil.class);
+    private static Logger logger = LoggerFactory.getLogger(ObtainNetworkIpUtil.class);
 
 
     /**
      * 获取请求主机IP地址,如果通过代理进来，则透过防火墙获取真实IP地址;
+     * //request.getHeader("X-Forwarded-For");
      *
      * @param request
      * @return
      * @throws IOException
      */
     public final static String getIpAddress(HttpServletRequest request) throws IOException {
-
-        // 获取请求主机IP地址,如果通过代理进来，则透过防火墙获取真实IP地址 //request.getHeader("X-Forwarded-For");
         String ip;
-
         logger.info("最开始getIpAddress(HttpServletRequest) - Remote - String ip=" + request.getRemoteAddr());
         logger.info("最开始getIpAddress(HttpServletRequest) - X-Forwarded-For - String ip=" + request.getHeader("X-Forwarded-For"));
-
         if (request.getHeader(X_FORWARDED_FOR) == null) {
             ip = request.getRemoteAddr();
             logger.info("getIpAddress(HttpServletRequest) - Remote - String ip=" + ip);
