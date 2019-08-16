@@ -3,6 +3,8 @@ package com.peter.common.string;
 
 import org.springframework.util.StringUtils;
 
+import java.math.BigDecimal;
+
 /**
  * @ClassName StringUtil
  * @Description 关于字符串相关的方法
@@ -99,7 +101,6 @@ public class StringUtil {
         String regex = "(\\w{" + String.valueOf(front) + "})(\\w+)(\\w{" + String.valueOf(end) + "})";
         return idCardNum.replaceAll(regex, "$1" + asteriskStr + "$3");
     }
-
 
 
     public static void main(String[] args) {

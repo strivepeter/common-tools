@@ -493,15 +493,64 @@ public class TimeUtils {
         return datetime.format(date);
     }
 
+
+    /**
+     * 比较两个日期的大小
+     *
+     * @param date 穿入的日期
+     * @return boolean 值
+     */
+    public static boolean compareTwoDate(String date) {
+        Date date1;
+        try {
+            date1 = pStringToDate(date);
+            if (date1.getTime() < System.currentTimeMillis()) {
+                return true;
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
+    /**
+     * 比较三个日期的大小
+     *
+     * @param date 穿入的日期
+     * @return boolean 值
+     */
+    public static boolean compareThreeDate(String date, String date2) {
+        Date date1;
+        Date date3;
+        try {
+            date1 = pStringToDate(date);
+            date3 = pStringToDate(date2);
+            if (date1.getTime() < System.currentTimeMillis()) {
+                if (date3.getTime() > System.currentTimeMillis()) {
+                    return true;
+                }
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
     /**
      * ---------------测试---------------
      *
      * @param args
      */
     public static void main(String[] args) {
+//
+//        System.out.println(getCurrentTimeBySecond());
+//        System.out.println(getSpecifiedDayAfter(new Date(),2));
 
         System.out.println(getCurrentTimeBySecond());
-        System.out.println(getSpecifiedDayAfter(new Date(),2));
+        System.out.println(compareTwoDate("2019-08-13 17:41:16"));
+
+        System.out.println(compareThreeDate("2019-08-13 16:41:16", "2019-08-14 17:41:16"));
 
     }
 }
