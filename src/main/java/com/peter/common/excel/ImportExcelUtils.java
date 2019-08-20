@@ -1,6 +1,7 @@
 package com.peter.common.excel;
 
 import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DateUtil;
 import org.apache.poi.ss.util.NumberToTextConverter;
 
@@ -68,6 +69,7 @@ public class ImportExcelUtils {
     private static String getCellFormatValue(HSSFCell cell) {
         String cellvalue = "";
         if (cell != null) {
+            cell.setCellType(CellType.STRING);
             // 判断当前Cell的Type
             switch (cell.getCellType()) {
                 // 如果当前Cell的Type为NUMERIC
