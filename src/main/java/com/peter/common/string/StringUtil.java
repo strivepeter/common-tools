@@ -105,5 +105,17 @@ public class StringUtil {
 
     public static void main(String[] args) {
         System.out.println(cardNumMask("6227003241901588939", 6, 4));
+
+
+        try {
+            Integer x = Integer.parseInt("2569uuu");
+            String  str = "1kk";
+            if (str.contains(".")){
+                System.out.println("ddd");
+            }
+            int coin = Integer.parseInt(str);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

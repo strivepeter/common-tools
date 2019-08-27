@@ -26,7 +26,6 @@ import java.util.Map.Entry;
 public class ExportExcelUtil<T> {
 
     private static Logger log = LoggerFactory.getLogger(ExportExcelUtil.class);
-
     private final HSSFWorkbook workbook;
     private String dateTimePattern = "yyyy-MM-dd HH:mm:ss";
 

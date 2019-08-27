@@ -527,6 +527,7 @@ public class TimeUtils {
             date1 = pStringToDate(date);
             date3 = pStringToDate(date2);
             if (date1.getTime() < System.currentTimeMillis()) {
+                System.out.println(1);
                 if (date3.getTime() > System.currentTimeMillis()) {
                     return true;
                 }
@@ -548,9 +549,9 @@ public class TimeUtils {
 //        System.out.println(getSpecifiedDayAfter(new Date(),2));
 
         System.out.println(getCurrentTimeBySecond());
-        System.out.println(compareTwoDate("2019-08-13 17:41:16"));
+        System.out.println(compareTwoDate("2019-08-27 18:00:00"));
 
-        System.out.println(compareThreeDate("2019-08-13 16:41:16", "2019-08-14 17:41:16"));
+        System.out.println(compareThreeDate("2019-08-26 00:00:00", "2019-08-26 16:09:04"));
 
     }
 }
